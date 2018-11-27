@@ -21,6 +21,6 @@ describe('crewMember.js', () => {
   it("should return 'had no effect' when the crew member tries to use their special ability when not assigned to a ship", () => {
     expect(tristan.engageWarpDrive()).to.match(/had no effect/i);
     expect(jon.setsInvisibility()).to.match(/had no effect/i);
-    expect(katie.chargePhasers()).to.match(/had no effect/i);
+    expect(katie.x).to.match(/had no effect/i);
   });
 });

@@ -16,17 +16,17 @@ describe('ship with a crew', () => {
 
   describe('crew member with a currentShip', () => {
     it('a newly created spaceship should be an instance of a spaceship', () => {
-      expect(pilot.currentShip).to.be.an('object');
-      expect(pilot.currentShip).to.be.an.instanceOf(Spaceship);
+      expect(pilot.currentShip()).to.be.an('object');
+      expect(pilot.currentShip()).to.be.an.instanceOf(Spaceship);
       expect(pilot.currentShip.constructor).to.be.a('function');
     });
 
     it('should create the association between a crew member and ship', () => {
-      expect(pilot.currentShip.shields).to.eq(4);
-      expect(pilot.currentShip).to.have.own.property('name', 'Millenium Falcon');
-      expect(pilot.currentShip.crew[0]).to.deep.eq(pilot);
-      expect(pilot.currentShip.crew[1]).to.deep.eq(defender);
-      expect(pilot.currentShip.crew[2]).to.deep.eq(gunner);
+      expect(pilot.currentShip().shields).to.eq(4);
+      expect(pilot.currentShip()).to.have.own.property('name', 'Millenium Falcon');
+      expect(pilot.currentShip().crew[0]).to.deep.eq(pilot);
+      expect(pilot.currentShip().crew[1]).to.deep.eq(defender);
+      expect(pilot.currentShip().crew[2]).to.deep.eq(gunner);
     });
   });
 
